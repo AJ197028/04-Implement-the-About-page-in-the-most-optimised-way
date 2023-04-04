@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import { cartContext } from '../Store/CartProvider';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
     let cartCtx=useContext(cartContext)
@@ -16,13 +17,13 @@ const Navbar = (props) => {
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Home</a>
+                             <NavLink className={({isActive})=>isActive?"nav-link active":"nav-link"} to="/">HOME</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/">Store</a>
+                                <NavLink className={({isActive})=>isActive?"nav-link active":"nav-link"} to="/store">StORE</NavLink>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link active" aria-current="page" href="/about">About</a>
+                                <NavLink className={({isActive})=>isActive?"nav-link active":"nav-link"} to="/about">ABOUT</NavLink>
                             </li>
                         </ul>
                         <form className="d-flex">
